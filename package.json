@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ascii-art": "^1.4.2",
     "log-update": "^2.3.0",
     "steem": "^0.7.1"
   }
