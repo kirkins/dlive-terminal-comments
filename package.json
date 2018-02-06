@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.3.0",
     "log-update": "^2.3.0",
     "steem": "^0.7.1"
   }

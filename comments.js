@@ -7,6 +7,7 @@
 "use strict";
 const steem = require('steem');
 const logUpdate = require('log-update');
+const chalk = require('chalk');
 const frames = ['-', '\\', '|', '/'];
 
 let i = 0;
@@ -17,13 +18,13 @@ setInterval(() => {
   steem.api.getContentReplies(args[0], args[1], function(err, result) {
     let textToRender = "\n\n";
     result.forEach(function(comment) {
-      textToRender += comment.author;
+      textToRender += chalk.blue(comment.author);
       textToRender += ": ";
       textToRender += comment.body;
-      textToRender += "\n";
+      textToRender += "\n\n";
     });
     logUpdate(
-      `${frame} Comments ${frame} ` 
+      chalk.green(`${frame} Comments ${frame} `)
       + textToRender
       + "\n"
     );
