@@ -12,13 +12,18 @@ const frames = ['-', '\\', '|', '/'];
 
 let i = 0;
 let args = process.argv.slice(2);
+let users = [];
  
 setInterval(() => {
   const frame = frames[i = ++i % frames.length];
   steem.api.getContentReplies(args[0], args[1], function(err, result) {
     let textToRender = "\n\n";
     result.forEach(function(comment) {
-      textToRender += chalk.blue(comment.author);
+      if(args[0] == comment.author) {
+        textToRender += chalk.red(comment.author);
+      } else {
+        textToRender += chalk.blue(comment.author);
+      }
       textToRender += ": ";
       textToRender += comment.body;
       textToRender += "\n\n";
