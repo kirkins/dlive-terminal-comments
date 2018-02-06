@@ -1,8 +1,8 @@
 // Script that displays comments from a steem post in terminal
 //
-// Use by passing username and permlink via terminal command
+// Use by passing dlink url
 //
-// Example: node comments.js kirkins frog-aquarium--2018-02-06-01-56-07
+// Example: node comments.js https://www.dlive.io/#/livestream/kirkins/e6a8af00-0b94-11e8-a1f6-7f5043328ad6
 
 "use strict";
 const steem = require('steem');
@@ -11,15 +11,21 @@ const chalk = require('chalk');
 const frames = ['-', '\\', '|', '/'];
 
 let i = 0;
-let args = process.argv.slice(2);
 let users = [];
+
+let url = process.argv.slive(2).split('/');
+let permlink = url[url.length-1];
+let user = url[url.length-2];
+console.log(permlink);
+console.log(user);
+process.exit();
  
 setInterval(() => {
   const frame = frames[i = ++i % frames.length];
-  steem.api.getContentReplies(args[0], args[1], function(err, result) {
+  steem.api.getContentReplies(user, permlink, function(err, result) {
     let textToRender = "\n\n";
     result.forEach(function(comment) {
-      if(args[0] == comment.author) {
+      if(user == comment.author) {
         textToRender += chalk.red(comment.author);
       } else {
         textToRender += chalk.blue(comment.author);
