@@ -4,6 +4,7 @@
 //
 // Example: node comments.js kirkins frog-aquarium--2018-02-06-01-56-07
 
+"use strict";
 const steem = require('steem');
 const logUpdate = require('log-update');
 const frames = ['-', '\\', '|', '/'];
