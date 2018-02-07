@@ -4,6 +4,15 @@ Script that displays comments from a post as an updating stream in terminal.
 
 Use by passing dlink, or steemit, or busy.org link for your live stream (or post)
 
+## Requirements
+
+- Node.js
+- /usr/bin/say
+
+On Ubuntu 16.04 `say` can be installed with:
+
+    sudo apt-get install gnustep-gui-runtime
+
 ## Install
 
 git clone https://github.com/kirkins/dlive-terminal-comments
