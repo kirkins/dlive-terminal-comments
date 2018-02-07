@@ -13,11 +13,10 @@ const frames = ['-', '\\', '|', '/'];
 let i = 0;
 let users = [];
 
-let url = process.argv.slive(2).split('/');
+let url = process.argv.slice(2)[0].split('/');
 let permlink = url[url.length-1];
 let user = url[url.length-2];
-console.log(permlink);
-console.log(user);
+
 process.exit();
  
 setInterval(() => {
