@@ -32,7 +32,7 @@ setInterval(() => {
     result.forEach(function(comment) {
       let unixTime = ((Date.parse(comment.created)) / 1000) - 18000;
       if(unixTime > lastVoiceMsg) {
-        let child = exec("say " + escape(comment.body), function(error, stdout, stderr) {
+        let child = exec("say " + comment.body, function(error, stdout, stderr) {
           if (error) console.log(error);
         });
         lastVoiceMsg = unixTime;
