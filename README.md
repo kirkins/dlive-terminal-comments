@@ -2,7 +2,9 @@
 
 Script that displays comments from a post as an updating stream in terminal.
 
-Use by passing dlink, or steemit, or busy.org link for your live stream (or post)
+Use by passing a dlive link, *or steemit, or busy.org link for your live stream (or post)*
+
+A list of comments will stay updated in the terminal. Anything new posted while you have the program running will be read out loud.
 
 ## Requirements
 
