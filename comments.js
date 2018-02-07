@@ -17,8 +17,6 @@ let url = process.argv.slice(2)[0].split('/');
 let permlink = url[url.length-1];
 let user = url[url.length-2];
 
-process.exit();
- 
 setInterval(() => {
   const frame = frames[i = ++i % frames.length];
   steem.api.getContentReplies(user, permlink, function(err, result) {
